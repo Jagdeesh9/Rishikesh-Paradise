@@ -1,0 +1,314 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bg-title{
+    background-color: #006A4E;
+    color: white;
+    /* font-size: 30px; */
+}
+.bg-lite{
+    background-color: #20b2abdc;
+}
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color:#006A4E;
+    position: sticky;
+    top: 5px;
+    z-index: 999;
+}
+nav>div{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+nav>div>ul{
+    display:flex;
+    align-items: center;
+    list-style: none;
+}
+nav>div>ul>li{
+    padding: 10px 20px;
+    position: relative;
+    /* background-color: aqua; */
+}
+
+nav>div>ul>li>a{
+    color: whitesmoke;
+    font-size: 20px;
+    text-decoration: none;
+}
+nav>div>h1{
+    color: white;
+}
+
+nav>div>.social>a>i{
+    color: white;
+    font-size: 25px;
+    padding: 5px;
+    
+}
+.submenu{
+    position: absolute;
+    padding: 0px;
+    width: 150px;
+    top: 67px;
+    list-style: none;
+    background-color:#006A4E;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+}
+nav>div>ul>li:hover .submenu{
+    position:absolute;
+    top: 50px;
+    visibility: visible;
+    opacity: 1;
+    transition: all .5s;
+}
+.submenu>li{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    color: whitesmoke;
+}
+.submenu>li:hover{
+    background-color: #20B2AA;
+}
+.submenu>li>a{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+
+}
+nav>div>ul>li:hover{
+    transition: all .5s;
+}
+
+nav>div>ul>li>a:hover{
+    color: whitesmoke;
+    text-decoration: none;
+}
+nav>div>.social>a>i:hover{
+    transform: scale(1.1);
+    text-shadow: 0px 0px 5px whitesmoke;
+}
+#check,.label,#bars,#menu-icon,#close-icon{
+    display: none; 
+    color:whitesmoke;  
+}
+.btn{
+    color: whitesmoke;
+    background-color: #20B2AA;
+    padding: 5px 30px;
+    font-size: 22px;
+}
+.btn:hover{
+    box-shadow: 0px 0px 10px whitesmoke;
+}
+@media(max-width:1000px){
+    nav>div>ul{
+        /* margin: 0; */
+        position: absolute;
+        display: block;
+        background-color: #20B2AA;
+        width: 100%;
+        overflow: hidden;
+        top: 56px;
+        left: -100%;
+        padding: 5px 0px;
+        transition: all 1s;
+    }
+    nav>div>ul>li>.submenu{
+        position: static;
+        visibility:visible;
+        opacity: 1;
+        height: 0%;
+        display: none;
+        color: white;
+        background-color: #20B2AA;
+    }
+    nav>div>ul>li:hover{
+        background-color: #006A4E;
+        transform: translateX(10px);
+    }
+    #check:checked~.submenu{
+        position: static;
+        display: block;
+        /* background-color: ; */
+        width: 100%;
+        height: 100%;
+        transition: all .5s;
+    }
+    .submenu>li:hover{
+        background-color: #006A4E;
+    }
+    #menu-icon,#close-icon{
+        display: block;
+        position: absolute;
+        right: 3%;
+        top: 14px;
+        font-size: 25px;
+    }
+    #close-icon{
+        display: none;
+    }
+    #bars:checked~ul{
+        left: 0;
+        transition: all .5s;
+    }
+    #bars:checked~.icons>#menu-icon{
+        display: none;
+    }
+    #bars:checked~.icons>#close-icon{
+        display: block;
+    }
+    
+}
+
+@media(max-width:550px){
+    .social{
+        display: none;
+    }
+    nav>div>.btn{
+        display: none;
+    }
+}
+
+/* slider starts here */
+#carousel>div>.carousel-item>img{
+    height: 80vh;
+}
+.carousel-caption{
+    position: absolute;
+    top: 20vh;
+    left: 10vw;
+    text-align: left;
+}
+.carousel-caption>.title{
+    background: #006A4E;
+    width: auto;
+    position: relative;
+    font-size: 50px;
+    font-weight: 600;
+    display: inline-block;
+    /* overflow: hidden; */
+}
+.carousel-caption>.title>h3{
+    font-size: 50px;
+}
+
+.carousel-caption>div>h2{
+    font-size: 50px;
+}
+/* welcome section---------------------------------------------------- */
+#welcome>div>.col-md-6>img{
+    height: 100%;
+}
+#welcome>div>.col-lg-6>ul>li{
+    font-size: 22px;
+    font-weight: 300;
+}
+/* why section ----------------- */
+.h-400{
+    height: 400px;
+}
+.jumbotron>h1{
+    color: whitesmoke;
+}
+.jumbotron>p{
+    font-weight: 600;
+}
+
+.bg-title{
+    background-color: #006A4E;
+    color: white;
+}
+
+.jumbotron>a:hover{
+    color: whitesmoke;
+    background-color: transparent;
+    border: 2px solid black;
+    transition: all .5s ease-out;
+}
+/* parallax---------------------------------------------------------- */
+#parallax{
+    height: 400px;
+    background-size: 100% 100%;
+    /* background-color: blue; */
+    background-image: url("/images/rishikesh.jpeg");
+    background-attachment: fixed;
+    /* background-size: ; */
+}
+#parallax1{
+    height: 400px;
+    background-size: 100% 100%;
+    /* background-color: blue; */
+    background-image: url("/images/Brown Autumn Photo Collage.jpg");
+    background-attachment: fixed;
+    /* background-size: ; */
+}
+#parallax2{
+    height: 400px;
+    background-size: 100% 100%;
+    /* background-color: blue; */
+    background-image: url("/images/WhatsApp Image 2023-12-28 at 10.12.31 AM (1).jpeg");
+    background-attachment: fixed;
+    /* background-size: ; */
+}
+#parallax3{
+    height: 400px;
+    background-size: 100% 100%;
+    /* background-color: blue; */
+    background-image: url("/images/WhatsApp Image 2023-12-28 at 10.22.24 AM.jpeg");
+    background-attachment: fixed;
+    /* background-size: ; */
+}
+
+/* boooking section------------------------- */
+.display-6{
+    font-size: 22px;
+    color: whitesmoke;
+}
+.display-7{
+    font-size: 35px;
+}
+/* footer------------------------------------------------------ */
+.bg-lite{
+    background-color: aqua;
+  }
+  .fs-30{
+    font-size: 30px;
+  }
+  .fs-18{
+    font-size: 18px;
+  }
+  .text-white{
+    color: whitesmoke;
+  }
+  .square{
+    height: 40px;
+    width: 40px;
+    padding: 5px;
+  }
+  hr{
+    font-weight: bold;
+  }
+  .square>i:hover{
+    transform: scale(1.5);
+    color: whitesmoke;
+    text-shadow: 0px 0px 5px white;
+  }
+  .display-5{
+    font-size: 22px;
+    color: white;
+  }
+  #links>li{
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+  }
