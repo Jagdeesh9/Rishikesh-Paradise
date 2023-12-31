@@ -264,7 +264,7 @@ nav>div>.social>a>i:hover{
     height: 400px;
     background-size: 100% 100%;
     /* background-color: blue; */
-    background-image: url("/images/WhatsApp Image 2023-12-28 at 10.22.24 AM.jpeg");
+    background-image: url("./public/images/rishikesh.jpeg");
     background-attachment: fixed;
     /* background-size: ; */
 }
@@ -309,11 +309,4 @@ nav>div>.social>a>i:hover{
     color: black;
     font-weight: 600;
     font-size: 18px;
-  }
-  /* SERVICE PAGE-------------------------------------------------------- */
-  .h-350{
-    height: 350px;
-  }
-  .text-black{
-    color: black;
   }

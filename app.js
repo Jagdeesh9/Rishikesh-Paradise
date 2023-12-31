@@ -1,13 +1,15 @@
+require('dotenv').config()
 const { urlencoded } = require('body-parser');
 const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
 
 const app = express()
-const port = 3000
+const PORT =80;
+// console.log(process.env)
 
 //db setup
-mongoose.connect("mongodb://127.0.0.1:27017/Rishikesh_Paradise")
+mongoose.connect(process.env.MONGO_URL)
 .then((res)=>console.log('connected'))
 .catch((err)=>console.log(err));  
 
@@ -36,9 +38,35 @@ const massageSchema = new mongoose.Schema({
       type:String,
   },
 })
-//user model
+
+const bookingSchema = new mongoose.Schema({
+  name:{
+    type:String,
+  },
+  booking:{
+    type:String,
+  },
+  email:{
+    type:String,
+  },
+  number:{
+    type:Number,
+  },
+  total:{
+    type:Number,
+  },
+  checkIn:{
+    type:Date,
+  },
+  checkOut:{
+    type:Date,
+  }
+})
+
+//models
 const userModel = mongoose.model("users",userSchema);
 const massageModel = mongoose.model("massage",massageSchema);
+const bookingModel = mongoose.model("booking",bookingSchema);
 
 //static file
 app.use(express.static(path.join(__dirname, 'public')));
@@ -53,6 +81,18 @@ app.set('view engine', 'ejs')
 app.get('/', (req, res) => {
   res.render('index')
 })
+app.get('/about', (req, res) => {
+  res.render('about')
+})
+app.get('/services', (req, res) => {
+  res.render('services')
+})
+app.get('/booking', (req, res) => {
+  res.render('booking')
+})
+
+
+
 
 app.post("/book",async (req,res)=>{
   const user = await userModel.create({
@@ -71,6 +111,20 @@ app.post("/massage",async (req,res)=>{
    res.send('successfully submitted');
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.post("/register",async (req,res)=>{
+  console.log(req.body);
+  const booking = await bookingModel.create({
+    name:req.body.name,
+    booking:req.body.booking,
+    total:req.body.total,
+    checkIn:req.body.checkIn,
+    checkOut:req.body.checkOut,
+    number:req.body.number,
+    email:req.body.email,
+  })
+  res.send(booking);
+})
+
+app.listen(PORT, () => {
+  console.log(`Example app listening on port ${PORT}`)
 })
