@@ -63,10 +63,20 @@ const bookingSchema = new mongoose.Schema({
   }
 })
 
+const fileSchema = new mongoose.Schema({
+  file:{
+    type:String,
+  },
+  description:{
+    type: String,
+  },
+})
+
 //models
 const userModel = mongoose.model("users",userSchema);
 const massageModel = mongoose.model("massage",massageSchema);
 const bookingModel = mongoose.model("booking",bookingSchema);
+const fileModel = mongoose.model("file", fileSchema);
 
 //static file
 app.use(express.static(path.join(__dirname, 'public')));
@@ -90,7 +100,9 @@ app.get('/services', (req, res) => {
 app.get('/booking', (req, res) => {
   res.render('booking')
 })
-
+app.get('/gallary', (req, res) => {
+  res.render('gallary');
+})
 
 
 
@@ -100,7 +112,7 @@ app.post("/book",async (req,res)=>{
        number:req.body.number,
        email:req.body.email,
    })
-   res.send("thanks we will contack you soon");
+   res.render('book');
 })
 
 app.post("/massage",async (req,res)=>{
@@ -108,7 +120,7 @@ app.post("/massage",async (req,res)=>{
        name:req.body.name,
        massage:req.body.massage,
    })
-   res.send('successfully submitted');
+   res.render('massage');
 })
 
 app.post("/register",async (req,res)=>{
@@ -122,8 +134,9 @@ app.post("/register",async (req,res)=>{
     number:req.body.number,
     email:req.body.email,
   })
-  res.send(booking);
+  res.render('book');
 })
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`)

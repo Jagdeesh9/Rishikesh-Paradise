@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .bg-title{
-    background-color: #006A4E;
+    background-color: #138465;
     color: white;
     /* font-size: 30px; */
 }
@@ -317,3 +317,14 @@ nav>div>.social>a>i:hover{
   .text-black{
     color: black;
   }
+  /* booking --------------------------------- */
+  .squareBox{
+    height: 100px;
+    width: 100px;
+}
+.text-green{
+    color: rgb(31, 184, 31);
+}
+.bg-white{
+    background-color: whitesmoke;
+}
