@@ -5,13 +5,12 @@ const path = require('path')
 const mongoose = require('mongoose')
 
 const app = express()
-const PORT =80;
+const PORT =process.env.PORT || 80;
 // console.log(process.env)
 
 //db setup
 mongoose.connect(process.env.MONGO_URL)
-.then((res)=>console.log('connected'))
-.catch((err)=>console.log(err));  
+.then((e)=>console.log("mongo connected"));
 
 
 //url encoder
