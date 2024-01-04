@@ -102,7 +102,9 @@ app.get('/booking', (req, res) => {
 app.get('/gallary', (req, res) => {
   res.render('gallary');
 })
-
+app.get('/rafting', (req, res) => {
+  res.render('rafting');
+})
 
 
 app.post("/book",async (req,res)=>{

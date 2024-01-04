@@ -8,6 +8,9 @@
     color: white;
     /* font-size: 30px; */
 }
+#list{
+    list-style: none;
+}
 .bg-lite{
     background-color: #20b2abdc;
 }
@@ -20,6 +23,13 @@ nav{
     position: sticky;
     top: 5px;
     z-index: 999;
+}
+.logo{
+    height: 100px;
+    width: 100px;
+}
+.clicked{
+    background-color: #20B2AA;
 }
 nav>div{
     display:flex;
@@ -328,3 +338,39 @@ nav>div>.social>a>i:hover{
 .bg-white{
     background-color: whitesmoke;
 }
+/* GALLARY SECTION--------------------------------------- */
+        #imgcontainer{
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        #imgcontainer>img{
+            height: 400px;
+            width: 350px;
+        }
+        .fullImg{
+            height: 100vh;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.741);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .fullImg>img{
+            height: 600PX;
+            width: 75vw;
+        }
+        .fullImg>span{
+            position: fixed;
+            top: 5%;
+            right: 5%;
+        }
